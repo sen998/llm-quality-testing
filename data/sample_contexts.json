@@ -1,0 +1,45 @@
+{
+  "description": "RAG 系统检索到的示例上下文数据",
+  "contexts": [
+    {
+      "id": "python-001",
+      "topic": "Python 语言",
+      "content": [
+        "Python 是一种高级编程语言，由 Guido van Rossum 于1991年创建。",
+        "Python 的设计哲学强调代码的可读性和简洁性。",
+        "Python 支持多种编程范式，包括面向对象、函数式和过程式编程。"
+      ],
+      "source": "Python 官方文档"
+    },
+    {
+      "id": "java-001",
+      "topic": "Java 语言",
+      "content": [
+        "Java 是一种面向对象的编程语言，由 James Gosling 于1995年创建。",
+        "Java 的设计目标是'一次编写，到处运行'。",
+        "Java 广泛应用于企业级开发、Android 应用和大数据处理。"
+      ],
+      "source": "Java 官方文档"
+    },
+    {
+      "id": "testing-001",
+      "topic": "软件测试",
+      "content": [
+        "软件测试是验证和确认软件是否满足规定需求的过程。",
+        "测试类型包括单元测试、集成测试、系统测试和验收测试。",
+        "自动化测试使用脚本和工具自动执行测试用例。"
+      ],
+      "source": "软件测试教材"
+    },
+    {
+      "id": "ai-testing-001",
+      "topic": "AI 大模型测试",
+      "content": [
+        "LLM-as-a-Judge 是一种使用大模型评估大模型输出质量的方法。",
+        "RAG 系统需要评测检索质量和生成质量两个维度。",
+        "幻觉检测是 AI 测试的核心挑战之一。"
+      ],
+      "source": "AI 测试技术博客"
+    }
+  ]
+}

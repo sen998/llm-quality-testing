@@ -1,0 +1,16 @@
+# 核心框架
+deepeval>=1.0.0
+
+# 测试框架
+pytest>=7.0.0
+pytest-html>=4.0.0
+pytest-xdist>=3.0.0
+
+# 环境变量管理
+python-dotenv>=1.0.0
+
+# HTTP 请求（数据生成用）
+requests>=2.31.0
+
+# 数据处理
+pandas>=2.0.0

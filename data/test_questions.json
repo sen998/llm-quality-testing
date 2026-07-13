@@ -1,0 +1,73 @@
+{
+  "description": "LLM 评测测试问题集，包含正面和负面用例",
+  "test_cases": [
+    {
+      "id": "TC-001",
+      "category": "faithfulness",
+      "type": "positive",
+      "input": "Python 是谁创建的？什么时候创建的？",
+      "actual_output": "Python 是由 Guido van Rossum 在1991年创建的，是一种强调代码可读性的高级编程语言。",
+      "context_id": "python-001",
+      "expected_result": "pass",
+      "description": "回答忠实于上下文"
+    },
+    {
+      "id": "TC-002",
+      "category": "faithfulness",
+      "type": "negative",
+      "input": "Python 是谁创建的？",
+      "actual_output": "Python 是由 James Gosling 在1995年创建的，主要用于企业级开发。",
+      "context_id": "python-001",
+      "expected_result": "fail",
+      "description": "回答与上下文矛盾（幻觉）"
+    },
+    {
+      "id": "TC-003",
+      "category": "hallucination",
+      "type": "negative",
+      "input": "Python 是谁创建的？",
+      "actual_output": "Python 是由 Java 之父 James Gosling 在1995年创建的，最初是为了替代 C++。",
+      "context_id": "python-001",
+      "expected_result": "fail",
+      "description": "包含明显的事实错误"
+    },
+    {
+      "id": "TC-004",
+      "category": "answer_relevancy",
+      "type": "positive",
+      "input": "Python 的创建者是谁？",
+      "actual_output": "Python 的创建者是 Guido van Rossum，他在1991年创建了这门语言。",
+      "expected_result": "pass",
+      "description": "回答直接切题"
+    },
+    {
+      "id": "TC-005",
+      "category": "answer_relevancy",
+      "type": "negative",
+      "input": "Python 的创建者是谁？",
+      "actual_output": "Python 是一种非常流行的编程语言，它的语法简洁优雅，适合初学者学习。",
+      "expected_result": "fail",
+      "description": "答非所问"
+    },
+    {
+      "id": "TC-006",
+      "category": "contextual_relevancy",
+      "type": "positive",
+      "input": "什么是自动化测试？",
+      "actual_output": "自动化测试使用脚本和工具自动执行测试用例。",
+      "context_id": "testing-001",
+      "expected_result": "pass",
+      "description": "上下文与问题相关"
+    },
+    {
+      "id": "TC-007",
+      "category": "multi_metric",
+      "type": "positive",
+      "input": "Java 是谁创建的？有什么特点？",
+      "actual_output": "Java 是由 James Gosling 在1995年创建的，设计目标是'一次编写，到处运行'，广泛应用于企业级开发。",
+      "context_id": "java-001",
+      "expected_result": "pass",
+      "description": "多指标综合评测"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 # 🧪 LLM 质量测试平台（DeepEval + SiliconFlow）
 
 &gt; 大二软件工程学生的 AI 大模型质量测试实践项目  
-&gt; 技术栈：Python | DeepEval | pytest | SiliconFlow API | GitHub Actions
+&gt; 技术栈：Python | DeepEval | pytest | SiliconFlow API 
 
 ## 📌 项目简介
 

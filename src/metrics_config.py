@@ -1,6 +1,6 @@
-"""
-指标配置中心
-统一管理 DeepEval 评测指标的配置
+﻿"""
+鎸囨爣閰嶇疆涓績
+缁熶竴绠＄悊 DeepEval 璇勬祴鎸囨爣鐨勯厤缃?
 """
 from deepeval.metrics import (
     FaithfulnessMetric,
@@ -13,15 +13,15 @@ from deepeval.metrics import (
 
 
 class MetricsConfig:
-    """评测指标配置类"""
+    """璇勬祴鎸囨爣閰嶇疆绫?""
 
-    # 默认评测模型（SiliconFlow）
+    # 榛樿璇勬祴妯″瀷锛圫iliconFlow锛?
     DEFAULT_MODEL = "deepseek-ai/DeepSeek-V3"
 
-    # 备用模型（当主模型不可用时）
+    # 澶囩敤妯″瀷锛堝綋涓绘ā鍨嬩笉鍙敤鏃讹級
     BACKUP_MODEL = "Qwen/Qwen2.5-72B-Instruct"
 
-    # 阈值配置
+    # 闃堝€奸厤缃?
     THRESHOLDS = {
         "faithfulness": 0.7,
         "hallucination": 0.5,
@@ -33,7 +33,7 @@ class MetricsConfig:
 
     @classmethod
     def get_faithfulness_metric(cls, model: str = None, threshold: float = None):
-        """获取忠实度指标"""
+        """鑾峰彇蹇犲疄搴︽寚鏍?""
         return FaithfulnessMetric(
             threshold=threshold or cls.THRESHOLDS["faithfulness"],
             model=model or cls.DEFAULT_MODEL,
@@ -42,7 +42,7 @@ class MetricsConfig:
 
     @classmethod
     def get_hallucination_metric(cls, model: str = None, threshold: float = None):
-        """获取幻觉检测指标"""
+        """鑾峰彇骞昏妫€娴嬫寚鏍?""
         return HallucinationMetric(
             threshold=threshold or cls.THRESHOLDS["hallucination"],
             model=model or cls.DEFAULT_MODEL,
@@ -51,7 +51,7 @@ class MetricsConfig:
 
     @classmethod
     def get_answer_relevancy_metric(cls, model: str = None, threshold: float = None):
-        """获取答案相关性指标"""
+        """鑾峰彇绛旀鐩稿叧鎬ф寚鏍?""
         return AnswerRelevancyMetric(
             threshold=threshold or cls.THRESHOLDS["answer_relevancy"],
             model=model or cls.DEFAULT_MODEL,
@@ -60,7 +60,7 @@ class MetricsConfig:
 
     @classmethod
     def get_contextual_relevancy_metric(cls, model: str = None, threshold: float = None):
-        """获取上下文相关性指标"""
+        """鑾峰彇涓婁笅鏂囩浉鍏虫€ф寚鏍?""
         return ContextualRelevancyMetric(
             threshold=threshold or cls.THRESHOLDS["contextual_relevancy"],
             model=model or cls.DEFAULT_MODEL,
@@ -69,7 +69,7 @@ class MetricsConfig:
 
     @classmethod
     def get_bias_metric(cls, model: str = None, threshold: float = None):
-        """获取偏见检测指标"""
+        """鑾峰彇鍋忚妫€娴嬫寚鏍?""
         return BiasMetric(
             threshold=threshold or cls.THRESHOLDS["bias"],
             model=model or cls.DEFAULT_MODEL,
@@ -78,7 +78,7 @@ class MetricsConfig:
 
     @classmethod
     def get_toxicity_metric(cls, model: str = None, threshold: float = None):
-        """获取毒性检测指标"""
+        """鑾峰彇姣掓€ф娴嬫寚鏍?""
         return ToxicityMetric(
             threshold=threshold or cls.THRESHOLDS["toxicity"],
             model=model or cls.DEFAULT_MODEL,
@@ -87,7 +87,7 @@ class MetricsConfig:
 
     @classmethod
     def get_all_metrics(cls, model: str = None):
-        """获取所有指标（用于综合评测）"""
+        """鑾峰彇鎵€鏈夋寚鏍囷紙鐢ㄤ簬缁煎悎璇勬祴锛?""
         return [
             cls.get_faithfulness_metric(model),
             cls.get_answer_relevancy_metric(model),
@@ -95,9 +95,9 @@ class MetricsConfig:
         ]
 
 
-# 便捷函数
+# 渚挎嵎鍑芥暟
 def get_metric(metric_name: str, **kwargs):
-    """通过名称获取指标"""
+    """閫氳繃鍚嶇О鑾峰彇鎸囨爣"""
     metric_map = {
         "faithfulness": MetricsConfig.get_faithfulness_metric,
         "hallucination": MetricsConfig.get_hallucination_metric,
@@ -108,6 +108,6 @@ def get_metric(metric_name: str, **kwargs):
     }
 
     if metric_name not in metric_map:
-        raise ValueError(f"未知指标: {metric_name}，可用: {list(metric_map.keys())}")
+        raise ValueError(f"鏈煡鎸囨爣: {metric_name}锛屽彲鐢? {list(metric_map.keys())}")
 
     return metric_map[metric_name](**kwargs)

@@ -60,14 +60,10 @@ pytest tests/ -v --html=report.html
 python scripts/run_evaluation.py
 
 ---
+## 📸 测试结果
 
-### 2. `.env.example` — 环境变量模板
+### pytest 测试
+![pytest 测试结果](docs/images/pytest-result.png)
 
-```env
-# SiliconFlow API 配置
-# 注册地址：https://cloud.siliconflow.cn
-SILICONFLOW_API_KEY=sk-your-siliconflow-api-key-here
-
-# 可选：评测模型选择
-# EVAL_MODEL=deepseek-ai/DeepSeek-V3
-# EVAL_MODEL=Qwen/Qwen2.5-72B-Instruct
+### 批量评测报告
+![批量评测报告](docs/images/evaluation-report.png)
